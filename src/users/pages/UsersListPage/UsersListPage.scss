@@ -1,0 +1,15 @@
+.users {
+  padding: 15px;
+  border: 2px dashed gainsboro;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  h1 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 17px;
+  }
+}
