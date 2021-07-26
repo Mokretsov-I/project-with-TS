@@ -1,12 +1,12 @@
 import { useQuery } from "react-query";
 
-const baseUrl = "https://jsonplaceholder.typicode.com";
-
 export const useAlbums = (id) => {
-	const { isLoading, isError, data, error } = useQuery("albums", () => {
-		const url = `${baseUrl}/users/${id}/albums`;
-		return fetch(url).then((res) => res.json());
-	});
+	const { isLoading, isError, data: albums, error } = useQuery("albums", request(id));
+	return { isLoading, isError, albums, error };
+};
 
-	return { isLoading, isError, data, error };
+const request = (id) => () => {
+	const baseUrl = process.env.REACT_APP_API_URL || "https://jsonplaceholder.typicode.com";
+	const url = `${baseUrl}/users/${id}/albums`;
+	return fetch(url).then((res) => res.json());
 };
