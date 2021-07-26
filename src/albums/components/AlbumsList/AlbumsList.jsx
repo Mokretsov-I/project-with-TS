@@ -6,22 +6,22 @@ import { Loader } from "components/Loader";
 import "./AlbumsList.scss";
 
 export const AlbumsList = () => {
-  const { data, isLoading } = useAlbumsContext();
+	const { albums, isLoading } = useAlbumsContext();
 
-  if (isLoading) {
-    <Loader />;
-  }
+	if (isLoading) {
+		<Loader />;
+	}
 
-  return (
-    <div className="albums">
-      <h2>Albums:</h2>
-      <ol>
-        {data?.map((album) => (
-          <li className="album__item" key={album.id}>
-            <p className="album__title">{album.title}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  );
+	return (
+		<div className="albums">
+			<h2>Albums:</h2>
+			<ol>
+				{albums?.map((album) => (
+					<li className="album__item" key={album.id}>
+						<p className="album__title">{album.title}</p>
+					</li>
+				))}
+			</ol>
+		</div>
+	);
 };

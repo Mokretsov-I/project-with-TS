@@ -4,7 +4,7 @@ import { AlbumsProvider } from "../providers/AlbumsProvider";
 import { AlbumsList } from "../components/AlbumsList";
 
 export const AlbumList = (props) => (
-  <AlbumsProvider>
-    <AlbumsList {...props} />
-  </AlbumsProvider>
+	<AlbumsProvider userId={props.userId}>
+		<AlbumsList {...props} />
+	</AlbumsProvider>
 );

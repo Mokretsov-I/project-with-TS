@@ -4,7 +4,7 @@ import { PostsProvider } from "../providers/PostsProvider";
 import { PostsList } from "../components/PostsList";
 
 export const PostList = (props) => (
-  <PostsProvider>
-    <PostsList {...props} />
-  </PostsProvider>
+	<PostsProvider userId={props.userId}>
+		<PostsList {...props} />
+	</PostsProvider>
 );

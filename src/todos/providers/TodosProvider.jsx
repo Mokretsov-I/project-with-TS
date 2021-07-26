@@ -3,11 +3,8 @@ import React from "react";
 import { useTodos } from "../hooks/useTodos";
 import { TodosContext } from "../context/todos-context";
 
-export const TodosProvider = ({ children }) => {
-  const id = children.props.userId;
-  const context = useTodos(id);
+export const TodosProvider = ({ userId, children }) => {
+	const context = useTodos(userId);
 
-  return (
-    <TodosContext.Provider value={context}>{children}</TodosContext.Provider>
-  );
+	return <TodosContext.Provider value={context}>{children}</TodosContext.Provider>;
 };
