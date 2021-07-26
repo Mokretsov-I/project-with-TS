@@ -1,1 +1,1 @@
-export { TodoList } from "./@core/TodoList";
+export { Todos } from "./@core/Todos";

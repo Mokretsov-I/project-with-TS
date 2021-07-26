@@ -1,1 +1,1 @@
-export { PostList } from "./@core/PostList";
+export { Posts } from "./@core/Posts";

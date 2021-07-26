@@ -1,1 +1,1 @@
-export { AlbumList } from "./@core/AlbumList";
+export { Albums } from "./@core/Albums";
