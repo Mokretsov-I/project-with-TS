@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 
 export const usePosts = (id) => {
-	const { isLoading, isError, data, error } = useQuery("posts", request(id));
-	return { isLoading, isError, data, error };
+	const { isLoading, isError, data: posts, error } = useQuery("posts", request(id));
+	return { isLoading, isError, posts, error };
 };
 
 const request = (id) => () => {

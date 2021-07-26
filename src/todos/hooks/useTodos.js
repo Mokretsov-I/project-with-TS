@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 
 export const useTodos = (id) => {
-	const { isLoading, isError, data, error } = useQuery("todos", request(id));
-	return { isLoading, isError, data, error };
+	const { isLoading, isError, data: todos, error } = useQuery("todos", request(id));
+	return { isLoading, isError, todos, error };
 };
 
 const request = (id) => () => {
