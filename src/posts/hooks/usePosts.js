@@ -6,6 +6,6 @@ export const usePosts = (id) => {
     isError,
     data: posts,
     error,
-  } = useQueryWrapper("posts", `/users/${id}/posts`, request);
+  } = useQueryWrapper("posts", request, `/users/${id}/posts`);
   return { isLoading, isError, posts, error };
 };

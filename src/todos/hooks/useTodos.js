@@ -6,6 +6,6 @@ export const useTodos = (id) => {
     isError,
     data: todos,
     error,
-  } = useQueryWrapper("todos", `/users/${id}/todos`, request);
+  } = useQueryWrapper("todos", request, `/users/${id}/todos`);
   return { isLoading, isError, todos, error };
 };
