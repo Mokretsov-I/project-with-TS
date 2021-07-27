@@ -8,11 +8,11 @@ const request = (endpoint, init = null) => {
 	return response;
 };
 
-export const useQueryWrapper = (key, endpoint) => {
-	const requestWraper = () => {
-		return request(endpoint);
+export const useQueryWrapper = (hash, input) => {
+	const requestWraper = ({ queryKey }) => {
+		return request(queryKey[1]);
 	};
 
-	const queryInfo = useQuery(key, requestWraper);
+	const queryInfo = useQuery([hash, input], requestWraper);
 	return queryInfo;
 };
