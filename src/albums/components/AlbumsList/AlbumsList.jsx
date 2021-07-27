@@ -7,7 +7,6 @@ import "./AlbumsList.scss";
 
 export const AlbumsList = () => {
 	const { albums, isLoading } = useAlbumsContext();
-
 	if (isLoading) {
 		<Loader />;
 	}
