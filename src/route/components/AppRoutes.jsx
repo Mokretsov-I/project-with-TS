@@ -5,11 +5,7 @@ import { UserList, UserDetail } from "users";
 
 export const AppRoutes = () => (
   <Switch>
-    <Route exact path={ROUTES.UserList}>
-      <UserList />
-    </Route>
-    <Route path={ROUTES.UserDetail}>
-      <UserDetail />
-    </Route>
+    <Route exact path={ROUTES.UserList} component={UserList} />
+    <Route path={ROUTES.UserDetail} component={UserDetail} />
   </Switch>
 );

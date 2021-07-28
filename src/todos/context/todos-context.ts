@@ -1,12 +1,18 @@
 import { createContext, useContext } from "react";
 
-
-export type ContextType = {
-  isLoading?: boolean
-  isError?: boolean
-  [data: string]: any
-  error?: any
+export type TodosType = {
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
 }
 
-export const TodosContext = createContext<ContextType>({});
+export type ContextType = {
+  isLoading: boolean
+  isError: boolean
+  todos: Array<TodosType>
+  error: any
+}
+
+export const TodosContext = createContext<ContextType>({} as ContextType);
 export const useTodosContext = () => useContext(TodosContext);

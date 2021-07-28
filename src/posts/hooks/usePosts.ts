@@ -1,5 +1,4 @@
 import { request, useQueryWrapper } from "api";
-import { ContextType } from "../context/posts-context";
 
 export const usePosts = (id: number) => {
   const {
@@ -7,6 +6,6 @@ export const usePosts = (id: number) => {
     isError,
     data: posts,
     error,
-  } : ContextType = useQueryWrapper("posts", request, `/users/${id}/posts`);
+  } = useQueryWrapper("posts", request, `/users/${id}/posts`);
   return { isLoading, isError, posts, error };
 };

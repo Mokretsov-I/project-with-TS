@@ -1,16 +1,16 @@
 import React, { ReactNode } from "react";
 import "./DetailInfo.scss";
 
-type detailInfoType = {
-    icon: ReactNode
-    body: {
-      type: string
-      value: any
-    }
-    title: string
-}
+type Props = {
+  icon: ReactNode;
+  body: {
+    type: string;
+    value: string | string[];
+  };
+  title: string;
+};
 
-export const DetailInfo: React.FC<detailInfoType> = ({ icon, body, title }) => (
+export const DetailInfo: React.FC<Props> = ({ icon, body, title }) => (
   <div className="info-block">
     <span className="icon">{icon}</span>
     <div className="info__body">
@@ -19,8 +19,11 @@ export const DetailInfo: React.FC<detailInfoType> = ({ icon, body, title }) => (
         <a href={`mailto:${body.value}`}>{body.value}</a>
       )}
       {body.type === "tel" && <a href={`tel:${body.value}`}>{body.value}</a>}
-      {body.type === "listText" &&
-        body.value.map((item: any, i: number) => <p key={i}>{item}</p>)}
+      {body.type === "listText" && Array.isArray(body.value) ? (
+        body.value.map((item: string) => <p key={item}>{item}</p>)
+      ) : (
+        <p>{body.value}</p>
+      )}
       {body.type === "link" && (
         <a href={`https://${body.value}`} target="_blank" rel="noreferrer">
           {body.value}

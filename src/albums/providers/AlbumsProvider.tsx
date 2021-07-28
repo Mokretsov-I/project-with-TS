@@ -1,14 +1,15 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 import { useAlbums } from "../hooks/useAlbums";
 import { AlbumsContext, ContextType } from "../context/albums-context";
 
-type AlbumsProviderType = {
-	userId: number
-	children: ReactNode
-}
+type Props = {
+  userId: number;
+};
 
-export const AlbumsProvider: React.FC<AlbumsProviderType> = ({ userId, children }) => {
-	const context: ContextType = useAlbums(userId);
-	return <AlbumsContext.Provider value={context}>{children}</AlbumsContext.Provider>;
+export const AlbumsProvider: React.FC<Props> = ({ userId, children }) => {
+  const context: ContextType = useAlbums(userId);
+  return (
+    <AlbumsContext.Provider value={context}>{children}</AlbumsContext.Provider>
+  );
 };

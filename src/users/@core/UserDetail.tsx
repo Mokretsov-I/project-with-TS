@@ -4,7 +4,7 @@ import { UserDetailPage } from "../pages/UserDetailPage";
 import { UsersProvider } from "../providers/UsersProvider";
 
 export const UserDetail: React.FC = () => (
-	<UsersProvider>
-		<UserDetailPage />
-	</UsersProvider>
+  <UsersProvider>
+    <UserDetailPage />
+  </UsersProvider>
 );

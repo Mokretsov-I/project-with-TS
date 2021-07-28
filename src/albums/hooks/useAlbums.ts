@@ -1,5 +1,4 @@
 import { request, useQueryWrapper } from "api";
-import { ContextType } from "../context/albums-context";
 
 export const useAlbums = (id: number) => {
   const {
@@ -7,6 +6,6 @@ export const useAlbums = (id: number) => {
     isError,
     data: albums,
     error,
-  } : ContextType = useQueryWrapper("albums", request, `/users/${id}/albums`);
+  } = useQueryWrapper("albums", request, `/users/${id}/albums`);
   return { isLoading, isError, albums, error };
 };

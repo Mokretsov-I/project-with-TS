@@ -1,13 +1,11 @@
-import { useQueryWrapper, request } from 'api';
-
-import { ContextType } from '../context/users-context'
+import { useQueryWrapper, request } from "api";
 
 export const useUsers = () => {
-	const {
+  const {
     isLoading,
     isError,
     data: users,
     error,
-  }: ContextType = useQueryWrapper("users", request, `/users`);
-	return { isLoading, isError, users, error };
+  } = useQueryWrapper("users", request, `/users`);
+  return { isLoading, isError, users, error };
 };

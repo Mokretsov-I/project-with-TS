@@ -9,10 +9,10 @@ import { Albums } from "albums";
 import "./Tabs.scss";
 
 export const Tabs: React.FC = () => {
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const [tab, setTab] = useState<string>("Posts");
 
-  const onTabClick = (e:any) => {
+  const onTabClick = (e: any) => {
     setTab(e.target.textContent);
   };
 

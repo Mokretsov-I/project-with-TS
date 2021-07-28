@@ -1,5 +1,4 @@
 import { request, useQueryWrapper } from "api";
-import { ContextType } from "../context/todos-context";
 
 export const useTodos = (id: number) => {
   const {
@@ -7,6 +6,6 @@ export const useTodos = (id: number) => {
     isError,
     data: todos,
     error,
-  }: ContextType = useQueryWrapper("todos", request, `/users/${id}/todos`);
+  } = useQueryWrapper("todos", request, `/users/${id}/todos`);
   return { isLoading, isError, todos, error };
 };

@@ -1,11 +1,35 @@
 import { createContext, useContext } from "react";
 
-export type ContextType = {
-  isLoading?: boolean
-  isError?: boolean
-  [data: string]: any
-  error?: any
-}
+export type UserType = {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+};
 
-export const UsersContext = createContext<ContextType>({});
+export type ContextType = {
+  isLoading: boolean;
+  isError: boolean;
+  users: Array<UserType>;
+  error: any;
+};
+
+export const UsersContext = createContext<ContextType>({} as ContextType);
 export const useUsersContext = () => useContext(UsersContext);
