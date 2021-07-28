@@ -1,9 +1,9 @@
 import React from "react";
 
-import { useAlbumsContext } from "../../context/albums-context";
+import { useAlbumsContext } from "albums/context/albums-context";
 import { Loader } from "components/Loader";
 
-import { ContextType } from '../../context/albums-context'
+import { ContextType } from 'albums/context/albums-context'
 
 import "./AlbumsList.scss";
 
