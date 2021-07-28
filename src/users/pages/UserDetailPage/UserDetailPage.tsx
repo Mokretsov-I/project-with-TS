@@ -12,10 +12,14 @@ import { faEnvelope, faBuilding, faUser } from "@fortawesome/free-regular-svg-ic
 import { faPhoneAlt, faHome, faSitemap, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "./UserDetailPage.scss";
 
-export const UserDetailPage = () => {
-	const { data, isLoading } = useUsersContext();
-	const { id } = useParams();
-	const user = useMemo(() => data?.find((u) => u.id === parseInt(id)), [data, id]);
+type usersType = {
+	id: number
+}
+
+export const UserDetailPage: React.FC = () => {
+	const { users, isLoading } = useUsersContext();
+	const { id } = useParams<{id: string}>();
+	const user = useMemo(() => users?.find((u: usersType) => u.id === parseInt(id)), [users, id]);
 
 	if (isLoading) return <Loader />;
 

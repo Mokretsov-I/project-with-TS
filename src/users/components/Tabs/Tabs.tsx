@@ -8,11 +8,11 @@ import { Albums } from "albums";
 
 import "./Tabs.scss";
 
-export const Tabs = () => {
-  const { id } = useParams();
-  const [tab, setTab] = useState("Posts");
+export const Tabs: React.FC = () => {
+  const { id } = useParams<{id: string}>();
+  const [tab, setTab] = useState<string>("Posts");
 
-  const onTabClick = (e) => {
+  const onTabClick = (e:any) => {
     setTab(e.target.textContent);
   };
 
@@ -29,9 +29,9 @@ export const Tabs = () => {
           Albums
         </li>
       </ul>
-      {tab === "Posts" && <Posts userId={id} />}
-      {tab === "Todos" && <Todos userId={id} />}
-      {tab === "Albums" && <Albums userId={id} />}
+      {tab === "Posts" && <Posts userId={Number(id)} />}
+      {tab === "Todos" && <Todos userId={Number(id)} />}
+      {tab === "Albums" && <Albums userId={Number(id)} />}
     </>
   );
 };
