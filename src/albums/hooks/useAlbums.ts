@@ -1,7 +1,7 @@
-import { AlbumsType } from "albums/context/albums-context";
+import { Albums } from "albums/models";
 import { request, useQueryWrapper } from "api";
 
-const fetchAlbums = (userId: string): Promise<AlbumsType[]> => {
+const fetchAlbums = (userId: string): Promise<Albums[]> => {
 	return request(`/users/${userId}/albums`);
 };
 

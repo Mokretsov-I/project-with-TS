@@ -1,16 +1,10 @@
 import { createContext, useContext } from "react";
+import { Todos } from "../modals";
 
-export type TodosType = {
-	userId: number;
-	id: number;
-	title: string;
-	completed: boolean;
-};
-
-export type ContextType = {
+type ContextType = {
 	isLoading: boolean;
 	isError: boolean;
-	todos?: Array<TodosType>;
+	todos?: Array<Todos>;
 	error: any;
 };
 

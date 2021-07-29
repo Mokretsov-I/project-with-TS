@@ -1,7 +1,7 @@
 import { request, useQueryWrapper } from "api";
-import { TodosType } from "todos/context/todos-context";
+import { Todos } from "todos/modals";
 
-const fetchTodos = (userId: string): Promise<TodosType[]> => {
+const fetchTodos = (userId: string): Promise<Todos[]> => {
 	return request(`/users/${userId}/todos`);
 };
 

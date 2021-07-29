@@ -1,7 +1,8 @@
 import React from "react";
 
-import { useTodosContext, TodosType } from "todos/context/todos-context";
+import { useTodosContext } from "todos/context/todos-context";
 import { Loader } from "components/Loader";
+import { Todos } from "todos/modals";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +18,7 @@ export const TodosList: React.FC = () => {
   return (
     <div className="todos">
       <h2>Todos:</h2>
-      {Array.isArray(todos) ? todos.map((todo: TodosType) => (
+      {Array.isArray(todos) ? todos.map((todo: Todos) => (
         <div
           className={"todos__item" + (todo.completed ? " completed" : "")}
           key={todo.id}

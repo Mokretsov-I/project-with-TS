@@ -1,7 +1,8 @@
 import { request, useQueryWrapper } from "api";
-import { PostsType } from "posts/context/posts-context";
 
-const fetchPosts = (userId: string): Promise<PostsType[]> => {
+import { Posts } from "posts/models";
+
+const fetchPosts = (userId: string): Promise<Posts[]> => {
 	return request(`/users/${userId}/posts`);
 };
 

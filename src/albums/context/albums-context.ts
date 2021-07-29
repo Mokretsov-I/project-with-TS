@@ -1,15 +1,10 @@
 import { createContext, useContext } from "react";
-
-export type AlbumsType = {
-	id: number;
-	userId: number;
-	title: string;
-};
+import { Albums } from "../models";
 
 type ContextType = {
 	isLoading: boolean;
 	isError: boolean;
-	albums?: Array<AlbumsType>;
+	albums?: Array<Albums>;
 	error: any;
 };
 

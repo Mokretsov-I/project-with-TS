@@ -1,7 +1,7 @@
 import { useQueryWrapper, request } from "api";
-import { UserType } from "users/context/users-context";
+import { Users } from "users/modals";
 
-const fetchAlbums = (): Promise<UserType[]> => {
+const fetchAlbums = (): Promise<Users[]> => {
 	return request(`/users`);
 };
 

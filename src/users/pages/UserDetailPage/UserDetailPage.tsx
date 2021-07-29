@@ -2,9 +2,10 @@ import React, { useMemo } from "react";
 import { NavLink, useParams } from "react-router-dom";
 
 import { Loader } from "components/Loader";
-import { useUsersContext, UserType } from "users/context/users-context";
+import { useUsersContext } from "users/context/users-context";
 import { DetailInfo } from "users/components/DetailInfo";
 import { Tabs } from "users/components/Tabs";
+import { Users } from "users/modals";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,7 +25,7 @@ export const UserDetailPage: React.FC = () => {
   const { users, isLoading } = useUsersContext();
   const { id } = useParams<{ id: string }>();
   const user = useMemo(
-    () => Array.isArray(users) ? users.find((u: UserType) => u.id === parseInt(id)) : null,
+    () => Array.isArray(users) ? users.find((u: Users) => u.id === parseInt(id)) : null,
     [users, id]
   );
 
