@@ -16,11 +16,11 @@ export const AlbumsList: React.FC = () => {
     <div className="albums">
       <h2>Albums:</h2>
       <ol>
-        {albums?.map((album: AlbumsType) => (
+        {Array.isArray(albums) ? albums.map((album: AlbumsType) => (
           <li className="album__item" key={album.id}>
             <p className="album__title">{album.title}</p>
           </li>
-        ))}
+        )) : "Albums is empty"}
       </ol>
     </div>
   );

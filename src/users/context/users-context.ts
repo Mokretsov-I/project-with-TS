@@ -27,7 +27,7 @@ export type UserType = {
 export type ContextType = {
   isLoading: boolean;
   isError: boolean;
-  users: Array<UserType>;
+  users: Array<UserType> | unknown;
   error: any;
 };
 

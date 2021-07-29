@@ -9,7 +9,7 @@ export type AlbumsType = {
 type ContextType = {
   isLoading: boolean;
   isError: boolean;
-  albums: Array<AlbumsType>;
+  albums: Array<AlbumsType> | unknown;
   error: any;
 };
 

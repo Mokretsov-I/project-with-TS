@@ -15,13 +15,13 @@ export const UsersListPage: React.FC = () => {
     <div className="users">
       <h1>Users</h1>
       <ol className="users__list">
-        {users?.map((user: UserType) => (
+        {Array.isArray(users) ? users.map((user: UserType) => (
           <li key={user.id} className="users__item">
             <NavLink to={`/user/${user.id}`}>
               {user.username} - {user.name}
             </NavLink>
           </li>
-        ))}
+        )) : "Users list is empty"}
       </ol>
     </div>
   );

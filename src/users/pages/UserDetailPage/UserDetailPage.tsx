@@ -24,7 +24,7 @@ export const UserDetailPage: React.FC = () => {
   const { users, isLoading } = useUsersContext();
   const { id } = useParams<{ id: string }>();
   const user = useMemo(
-    () => users?.find((u: UserType) => u.id === parseInt(id)),
+    () => Array.isArray(users) ? users.find((u: UserType) => u.id === parseInt(id)) : null,
     [users, id]
   );
 

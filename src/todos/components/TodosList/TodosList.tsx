@@ -17,7 +17,7 @@ export const TodosList: React.FC = () => {
   return (
     <div className="todos">
       <h2>Todos:</h2>
-      {todos?.map((todo: TodosType) => (
+      {Array.isArray(todos) ? todos.map((todo: TodosType) => (
         <div
           className={"todos__item" + (todo.completed ? " completed" : "")}
           key={todo.id}
@@ -27,7 +27,7 @@ export const TodosList: React.FC = () => {
           </span>
           <p className="todo__title">{todo.title}</p>
         </div>
-      ))}
+      )) : "Todos is empty"}
     </div>
   );
 };

@@ -10,7 +10,7 @@ export type TodosType = {
 export type ContextType = {
   isLoading: boolean
   isError: boolean
-  todos: Array<TodosType>
+  todos: Array<TodosType> | unknown
   error: any
 }
 

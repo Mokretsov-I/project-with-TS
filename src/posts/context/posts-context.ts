@@ -10,7 +10,7 @@ export type PostsType = {
 export type ContextType = {
   isLoading: boolean
   isError: boolean
-  posts: Array<PostsType>
+  posts: Array<PostsType> | unknown
   error?: any
 }
 
