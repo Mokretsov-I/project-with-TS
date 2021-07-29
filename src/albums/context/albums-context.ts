@@ -1,16 +1,16 @@
 import { createContext, useContext } from "react";
 
 export type AlbumsType = {
-  id: number;
-  userId: number;
-  title: string;
+	id: number;
+	userId: number;
+	title: string;
 };
 
 type ContextType = {
-  isLoading: boolean;
-  isError: boolean;
-  albums: Array<AlbumsType> | unknown;
-  error: any;
+	isLoading: boolean;
+	isError: boolean;
+	albums?: Array<AlbumsType>;
+	error: any;
 };
 
 export const AlbumsContext = createContext<ContextType>({} as ContextType);
