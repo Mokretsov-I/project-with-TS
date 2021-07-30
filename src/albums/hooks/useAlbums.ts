@@ -1,11 +1,10 @@
-import { Albums } from "albums/models";
-import { request, useQueryWrapper } from "api";
+import { useMemo } from "react";
 
-const fetchAlbums = (userId: string): Promise<Albums[]> => {
-	return request(`/users/${userId}/albums`);
-};
+import { AlbumsService } from "albums/services";
+import { useQueryWrapper } from "api";
 
 export const useAlbums = (id: number) => {
-	const { isLoading, isError, data: albums, error } = useQueryWrapper("albums", fetchAlbums, id);
+	const albumsService = useMemo(() => new AlbumsService(), []);
+	const { isLoading, isError, data: albums, error } = useQueryWrapper("albums", albumsService.getAlbums, id);
 	return { isLoading, isError, albums, error };
 };

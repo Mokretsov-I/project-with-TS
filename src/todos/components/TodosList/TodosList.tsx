@@ -2,7 +2,7 @@ import React from "react";
 
 import { useTodosContext } from "todos/context/todos-context";
 import { Loader } from "components/Loader";
-import { Todos } from "todos/modals";
+import { Todos } from "todos/models";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";

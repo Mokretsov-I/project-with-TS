@@ -1,11 +1,10 @@
-import { useQueryWrapper, request } from "api";
-import { Users } from "users/modals";
+import { useMemo } from "react";
 
-const fetchAlbums = (): Promise<Users[]> => {
-	return request(`/users`);
-};
+import { useQueryWrapper } from "api";
+import { UsersService } from "users/services";
 
 export const useUsers = () => {
-	const { isLoading, isError, data: users, error } = useQueryWrapper("users", fetchAlbums, `/users`);
+	const usersService = useMemo(() => new UsersService(), []);
+	const { isLoading, isError, data: users, error } = useQueryWrapper("users", usersService.getUsers, `/users`);
 	return { isLoading, isError, users, error };
 };

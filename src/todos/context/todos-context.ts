@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { Todos } from "../modals";
+import { Todos } from "../models";
 
 type ContextType = {
 	isLoading: boolean;
