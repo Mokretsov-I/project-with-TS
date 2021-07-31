@@ -1,0 +1,23 @@
+.back-link {
+	text-decoration: none;
+	color: black;
+}
+.info {
+	display: flex;
+	justify-content: space-between;
+
+	.info__person {
+		width: 30%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 15px;
+		}
+	}
+
+	.tabs-block {
+		width: 65%;
+	}
+}

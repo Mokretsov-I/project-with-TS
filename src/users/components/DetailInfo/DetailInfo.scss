@@ -1,0 +1,31 @@
+.info-block {
+	display: flex;
+	align-items: top;
+
+	.icon {
+		color: gray;
+		font-size: 2rem;
+		margin-right: 20px;
+		width: 32px;
+	}
+
+	.info__body {
+		display: flex;
+		flex-direction: column;
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-weight: 700;
+		}
+
+		.info__title {
+			font-size: 0.8rem;
+			color: silver;
+		}
+	}
+}
